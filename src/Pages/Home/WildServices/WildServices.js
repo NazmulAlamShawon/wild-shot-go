@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import WildService from '../Wildservice/WildService';
+import './wildservices.css'
 
 const WildServices = () => {
     const [wildservices,setWildservices] = useState([])
@@ -9,7 +11,17 @@ const WildServices = () => {
     },[])
     return (
         <div>
-           <h2>WildServices: {wildservices.length}</h2>
+           <h1 className='text-center text-primary mt-5 bg-dark '>WildServices: {wildservices.length}</h1>
+            <div className="wild-container">
+            {
+               wildservices.map(wildservice =><WildService
+                key = {wildservice.id}
+                wildservice={wildservice}
+
+               >
+               </WildService>)
+           }
+            </div>
         </div>
     );
 };

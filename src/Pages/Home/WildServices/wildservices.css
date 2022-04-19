@@ -1,0 +1,19 @@
+.wild-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    padding:5px;
+    border: 2px solid black;
+    gap:5px;
+}
+/*  responsive area */
+@media only screen and (max-width:576px){
+   .wild-container{
+    grid-template-columns:repeat(1,1fr);
+   }
+}
+
+@media only screen and (min-width:577px) and (max-width:992px){
+    .wild-container{
+     grid-template-columns:repeat(2,1fr);
+    }
+ }
