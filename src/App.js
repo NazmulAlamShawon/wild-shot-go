@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Services from './Pages/Services/Services';
 import Header from './Shared/Header/Header';
+import Notfound from './Pages/Notfound/Notfound';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route path='/checkout' element={<Checkout></Checkout>}></Route>
           <Route path='/blog' element={<Blog></Blog>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
+          <Route path='*' element={<Notfound></Notfound>}></Route>
+          
         </Routes>
     </div>
   );
