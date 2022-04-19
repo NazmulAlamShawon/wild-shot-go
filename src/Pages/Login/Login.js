@@ -1,9 +1,48 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Login = () => {
+    const emailRef= useRef('');
+    const passRef= useRef('');
+    const navigate = useNavigate()
+    const formSubmit = event =>{
+        event.preventDefault();
+       const email = emailRef.current.value;
+       const pass = passRef.current.value;
+       console.log(email,pass)
+
+    }
+   const navigateRegister = event => {
+       navigate('/register');
+   }
     return (
-        <div>
-           <h1>plese login</h1>  
+        <div className='conatiner w-50 mx-auto mt-3 border-2'>
+            <h1 className='text-primary'>plese login</h1>
+            <Form onSubmit={formSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                    <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control ref={passRef} type="password" placeholder="Password" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+            <p> New user : <span className='text-primary' onClick={navigateRegister}>Please Register</span></p>
 
         </div>
     );

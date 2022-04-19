@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect,  useState } from 'react';
 import WildService from '../Wildservice/WildService';
 import './wildservices.css'
 
 const WildServices = () => {
     const [wildservices,setWildservices] = useState([])
+    
     useEffect(()=>{
         fetch('myData.json')
         .then(res => res.json())
