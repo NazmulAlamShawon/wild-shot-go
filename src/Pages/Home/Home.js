@@ -1,9 +1,13 @@
 import React from 'react';
+import Baner from './Baner/Baner';
+import WildServices from './WildServices/WildServices';
 
 const Home = () => {
     return (
         <div>
-            <h1>This is home page</h1>
+          <Baner></Baner>
+          <WildServices></WildServices>
+            
         </div>
     );
 };
